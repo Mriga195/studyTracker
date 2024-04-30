@@ -1,1 +1,2 @@
-# studyTracker
+# studyTracker<br>
+Author: Mriganka Mahanta
