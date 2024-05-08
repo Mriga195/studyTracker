@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{% block title %}Records
+{% endblock %}
+
+{% block body %}
+{% block link %}<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"> {% endblock %}
+{% block profile %}
+    {% if username %}
+    <li class="profile">{{ username }}</li>
+    {% endif %} 
+{% endblock %}
+
+
+<!-- Container for the graph -->
+<div id="graph-container"></div>
+
+<div>
+<script>
+    // JavaScript to render the graph using Plotly.js
+        var dates = JSON.parse('{{ dates | safe }}');
+        var quantities = JSON.parse('{{ quantities | safe }}');
+
+        var data = [{
+        x: dates,
+        y: quantities,
+        type: 'bar'
+        }];
+
+    var layout = {
+        title: 'Date vs Time Studied (minutes)',
+        xaxis: {
+            title: 'Date'
+        },
+        yaxis: {
+            title: 'Time Studied (minutes)'
+        }
+    };
+
+    Plotly.newPlot('graph-container', data, layout);
+</script>
+</div>
+{% endblock %}

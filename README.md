@@ -1,2 +1,23 @@
-# studyTracker<br>
-Author: Mriganka Mahanta
+# StudyTracker
+
+## Video Demo: [URL HERE](<https://youtu.be/s4gdBp6qdFM>)
+
+## Description
+
+Hello CS50, my project name is StudyTracker. It lets the user focus on studies using the Pomodoro technique. It shows records in terms of a graph of how much the user has studied against the date they did it. There's a leaderboard tab that orders all the user in descending order of their total study times.
+
+When opened, the login page will be opened. I've used the same design and technique of the problem finance of the last pset. The route `../` directs you to the login webpage using the `index` function, that triggers the `login` function that lets the user log in. The `login.html` file extends the `layout.html` page which creates the layout for the pages that includes the navbar with tabs to go to every section of the web app. The input fields of `login.html` have a `required` attribute so it won't let them submit without any input. Furthermore, a link is there just below the submit button that lets people register a new account. This link directs the user to the `../register` route.
+
+The `../register` calls the `register` function which when the method is GET renders the page `register.html`. It has 3 input fields, one is for username and the others are for password, one lets you enter the password and the next asks you to confirm it. The password has to be at least 8 characters long or it won't let the user submit. If confirmation and given passwords do not match, there'll be a box above the fields with a red outline that tells the user that. The same happens if a username is already taken. If the registration process is a success, it renders the `login.html` file. If the username or password is wrong on the login page, it shows the same kind of red box above the fields letting the user know. This is achieved using conditionals in these files and taking arguments at the time of rendering. `style.css` file is used to style these pages. Once the login process succeeds, it directs the user to `../home`. The register function also stores the username and password of the user in the `users` table of the `StudyBase.db` database. The register function also calls the `record_study_session` function from `track.py` to insert the user in another table `study_sessions`.
+
+The `home` function renders the `home.html` file, which uses a bit of JavaScript in the file `../static/script.js`. It is basically a timer of 25 minutes, then a break timer of 5 minutes. This is the page the user uses to study using the Pomodoro technique. In `script.js`, the functionality of the timer and the start and reset button is given. The script file also calls the `record_study_session` function to update the value (`duration_minutes`) from `study_sessions` table each time the focus of 25 minutes ends. For the same user on different days, there are different rows with each day's total study time recorded. This is used to plot the graph in `../records` route.
+
+The next Records tab directs the user to `../records` route. The records function shows a graph of time studied against the day of the user. Applied Plotly for the graph and the graph is of type bar.
+
+Leaderboard tab uses the `leaderboard.html` file which uses the `leaderboard.js` file. It sorts the users according to their study minutes in the form of "scores". First functions take values from the `../api/user_scores` with the `get_user_scores` function. It takes values from the `study_session` table and the next function add and then sorts the users. The style of this page is in `leaderboard.css`.
+
+The about page informs the user about what Pomodoro is. The content of this file was not written and taken from the internet. The styling is in `about.css` file.
+
+The account page lets the user delete, log out, or change the password of their account. The log out calls the `log_out` function which just clears the session. Password change calls `c-password` function using the route `../password_change`. It uses the same template as register and login. It doesn't let the user keep the fields blank and tells the user if the old password is wrong. The delete link calls the route `../delete` which deletes the user data from both the tables.
+
+The `StudyBase.db` file has 2 tables, as informed above: `users` and `study_sessions`. The `users` table has 3 columns `username` and hashes of their passwords (for security) and `id` (PRIMARY KEY). The other table `study_sessions` has 3 columns: `username`, `date`, and `duration_minutes`. The `date` stores the date the user studies and `duration_minutes` stores the amount of time they studied on the given day.

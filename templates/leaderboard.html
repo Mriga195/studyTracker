@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %} Leaderboard {% endblock %}
+{% block link %} <link rel="stylesheet" href="{{ url_for('static', filename='leaderboard.css') }}"> {% endblock %}
+{% block profile %}
+    {% if username %}
+    <li class="profile">{{ username }}</li>
+    {% endif %} 
+{% endblock %}
+
+
+{% block body%}
+<div class="container">
+    <h1>Leaderboard</h1>
+    <table id="leaderboard">
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Total Score</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- This will be populated dynamically with JavaScript -->
+        </tbody>
+    </table>
+</div>
+
+<script src="{{ url_for('static', filename='leaderboard.js') }}"></script>
+{% endblock %}

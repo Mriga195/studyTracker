@@ -1,0 +1,65 @@
+/* Reset default margin and padding */
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+/* Style container */
+.container {
+    max-width: 1200px;
+    margin: 8px auto 20px; /* Top margin to clear the navbar */
+    padding: 100px;
+    background-color: #024950;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+/* Style header */
+header {
+    text-align: center; /* Center-align header content */
+    margin-bottom: 20px; /* Add space below the header */
+}
+
+/* Style main sections */
+section {
+    margin-bottom: 30px; /* Add space between sections */
+}
+
+/* Style section headings */
+h1, h2 {
+    color: beige; /* Set heading color */
+}
+
+/* Style paragraph text */
+p {
+    line-height: 1.6; /* Increase line height for readability */
+    color: white;
+}
+
+/* Style ordered and unordered lists */
+ol, ul {
+    padding-left: 20px; /* Indent lists */
+    color: white;
+}
+
+/* Style footer */
+footer {
+    text-align: center; /* Center-align footer content */
+    margin-top: 30px; /* Add space above the footer */
+    padding-top: 10px; /* Add padding inside the footer */
+    border-top: 1px solid #ccc; /* Add a top border */
+    font-size: 14px; /* Set font size for footer text */
+    color: #777; /* Set text color for footer */
+}
+
+body {
+    background-image: url('wall.jpg'); /* Specify the path to your image */
+    background-size: cover; /* Cover the entire background */
+    background-position: center; /* Center the background image */
+    height: 100vh; /* Set the height of the body to full viewport height */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+.profile {
+    color: white;
+    font-weight: bold;
+}

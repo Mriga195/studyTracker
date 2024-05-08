@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+{% block link %} <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"> {% endblock %}
+
+
+{% block body %}
+
+<div class="flex-container">
+    {% if error %}
+    <div class="transparent-box">{{ message }}</div>
+    {% endif %}
+
+    <form action="/register" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="username" placeholder="Username" type="text" required>
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" name="password" placeholder="Password" type="password"  required pattern=".{8,}" title="Password must be at least 8 characters long">
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" name="confirmation" placeholder="Confirm Password" type="password"  required pattern=".{8,}" title="Password must be at least 8 characters long">
+        </div>
+        <button class="btn btn-primary" type="submit">Register</button>
+        <div id="register_link">Already have an account? <a href="login">Login here</a></div>
+    </form>
+</div>
+{% endblock %}

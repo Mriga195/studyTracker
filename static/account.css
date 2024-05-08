@@ -1,0 +1,50 @@
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url('wall.jpg'); /* Specify the path to your image */
+    background-size: cover; /* Cover the entire background */
+    background-position: center; /* Center the background image */
+    height: 100vh; /* Set the height of the body to full viewport height */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+.settings-container {
+    width: 300px; /* Adjust width as needed */
+    background-color: #024950; /* White box background */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+    text-align: center;
+}
+
+.settings-container div {
+    margin-bottom: 20px;
+}
+
+.settings-container a {
+    display: block;
+    padding: 15px 30px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    border: 2px solid #007bff; /* Blue border */
+    background-color: #afdde5;
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+}
+
+.settings-container a:hover {
+    background-color: #007bff; /* Blue background on hover */
+    color: #fff; /* White text on hover */
+}
+
+.profile {
+    color: white;
+    font-weight: bold;
+}

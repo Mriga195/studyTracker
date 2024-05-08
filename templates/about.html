@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block title %} Home {% endblock %}
+{% block link %} <link rel="stylesheet" href="{{ url_for('static', filename='about.css') }}"> {% endblock %}
+{% block profile %}
+    {% if username %}
+    <li class="profile">{{ username }}</li>
+    {% endif %} 
+{% endblock %}
+
+
+{% block body %}
+    <div class="container">
+        <header>
+            <h1>About Pomodoro Studying</h1>
+        </header>
+
+        <main>
+            <section>
+                <h2>What is Pomodoro Studying?</h2>
+                <p>Pomodoro studying is a technique developed by Francesco Cirillo in the late 1980s. It's a time management method that uses a timer to break down work into intervals, traditionally 25 minutes in length, separated by short breaks. The technique is named after the tomato-shaped kitchen timer (pomodoro means "tomato" in Italian) that Cirillo used as a university student.</p>
+            </section>
+
+            <section>
+                <h2>How Does it Work?</h2>
+                <p>The Pomodoro Technique involves the following steps:</p>
+                <ol>
+                    <li><strong>Choose a Task:</strong> Decide on the task you want to work on.</li>
+                    <li><strong>Set the Timer:</strong> Set a timer for 25 minutes (one Pomodoro).</li>
+                    <li><strong>Work on the Task:</strong> Focus on the task until the timer rings.</li>
+                    <li><strong>Take a Short Break:</strong> Take a 5-minute break to rest and recharge.</li>
+                    <li><strong>Repeat:</strong> After four Pomodoros, take a longer break (15-30 minutes).</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Benefits of Pomodoro Studying</h2>
+                <p>The Pomodoro Technique has several benefits:</p>
+                <ul>
+                    <li><strong>Improved Focus:</strong> Breaking work into short intervals can help improve concentration.</li>
+                    <li><strong>Enhanced Productivity:</strong> The structured approach can boost productivity and time management.</li>
+                    <li><strong>Reduced Procrastination:</strong> Knowing there's a timer ticking can motivate you to stay on task.</li>
+                    <li><strong>Less Mental Fatigue:</strong> Regular breaks prevent burnout and maintain mental freshness.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Getting Started with Pomodoro Studying</h2>
+                <p>To start using the Pomodoro Technique for studying:</p>
+                <ol>
+                    <li>Choose a task or subject you want to focus on.</li>
+                    <li>Set a timer for 25 minutes.</li>
+                    <li>Work on the task with full concentration until the timer rings.</li>
+                    <li>Take a short break (5 minutes).</li>
+                    <li>Repeat the process for several Pomodoros, taking longer breaks after completing sets.</li>
+                </ol>
+                <p>This site helps you implement this technique effectively.</p>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Study_Tracker | Designed by Mriganka</p>
+        </footer>
+    </div>
+{% endblock %}

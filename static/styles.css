@@ -1,0 +1,88 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('wall.jpg'); /* Specify the path to your image */
+    background-size: cover; /* Cover the entire background */
+    background-position: center; /* Center the background image */
+    height: 100vh; /* Set the height of the body to full viewport height */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    
+}
+
+.timer-container {
+    text-align: center;
+    padding: 25px 20px;
+}
+
+#timer {
+    font-size: 10em;
+    border: 2px solid white;
+    border-radius: 20px; /* Adjust the border-radius as needed */
+    padding: 25px;
+    width: 500px; /* Adjust the width as needed */
+    color: white;
+    background-color: #024950;
+}
+
+button {
+    font-size: 1.5em;
+    margin-top: 20px;
+    padding: 10px 20px;
+    border-radius: 50px; /* Make the button more round */
+    border: none; /* Remove the default button border */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    background-color: #003135; /* Set button background color */
+    color: white; /* Set text color to white */
+
+}
+
+nav {
+    background-color: beige;
+}
+
+#register_link {
+    margin-top: 10px;
+}
+
+form {
+    border: 5px solid black;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: whitesmoke;
+}
+
+.container {
+    width: 80%;
+    max-width: 800px;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+}
+
+.transparent-box {
+    background-color: rgba(255, 0, 0, 0.3);
+    padding: 10px;
+    border: 1px solid red;
+    border-radius: 5px;
+    width: 300px;
+    position: absolute;
+    margin-top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.flex-container {
+    position: relative;
+    margin-top: 50px;
+}
+
+.profile {
+    color: white;
+    font-weight: bold;
+}
